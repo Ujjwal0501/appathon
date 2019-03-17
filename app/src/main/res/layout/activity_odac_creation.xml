@@ -26,6 +26,8 @@
                 android:layout_height="wrap_content" />
 
             <EditText
+                android:id="@+id/ac_holder"
+                android:text="Name"
                 android:textAlignment="center"
                 android:hint="@string/name_hint"
                 android:layout_width="match_parent"
@@ -45,6 +47,8 @@
                 android:layout_height="wrap_content" />
 
             <EditText
+                android:id="@+id/ac_phone"
+                android:text="9123456789"
                 android:inputType="phone"
                 android:textAlignment="center"
                 android:hint="Mobile Number"

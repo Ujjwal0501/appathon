@@ -17,4 +17,18 @@
     <string name="submit">Submit</string>
     <string name="create_ac">Create Account</string>
     <string name="name_hint">Full Name</string>
+    <string name="upifile">upidetails</string>
+    <string name="upiid">upiid</string>
+    <string name="ccfile">ccdetails</string>
+    <string name="ccno">ccno</string>
+    <string name="ccexp">ccexp</string>
+    <string name="cccvv">cccvv</string>
+    <string name="ccholder">ccholder</string>
+    <string name="acfile">acdetails</string>
+    <string name="acno">acno</string>
+    <string name="acholder">acholder</string>
+    <string name="acphone">acphone</string>
+
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
 </resources>

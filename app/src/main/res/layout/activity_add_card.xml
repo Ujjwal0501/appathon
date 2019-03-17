@@ -20,10 +20,28 @@
             android:layout_height="wrap_content"/>
 
         <EditText
+            android:text="1234567890123456"
             android:inputType="number"
             android:id="@+id/cc_no"
             android:textAlignment="center"
             android:hint="Credit Card Number"
+            android:layout_width="300dp"
+            android:layout_height="wrap_content"
+            android:padding="25dp" />
+
+        <TextView
+            android:visibility="gone"
+            android:layout_marginTop="40dp"
+            android:textSize="9pt"
+            android:text="Your name as on Card"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"/>
+
+        <EditText
+            android:text="STATE BANK CUSTOMER"
+            android:id="@+id/cc_holder"
+            android:textAlignment="center"
+            android:hint="Customer Name"
             android:layout_width="300dp"
             android:layout_height="wrap_content"
             android:padding="25dp" />
@@ -42,6 +60,7 @@
                 android:layout_height="match_parent">
 
                 <TextView
+                    android:visibility="gone"
                     android:textSize="9pt"
                     android:text="Expiry"
                     android:layout_width="wrap_content"
@@ -49,6 +68,7 @@
                     android:padding="25dp" />
 
                 <EditText
+                    android:text="01/21"
                     android:inputType="date"
                     android:id="@+id/cc_exp"
                     android:textSize="9pt"
@@ -67,6 +87,7 @@
                 android:layout_height="match_parent">
 
                 <TextView
+                    android:visibility="gone"
                     android:textSize="9pt"
                     android:text="CVV"
                     android:layout_width="wrap_content"
@@ -74,6 +95,7 @@
                     android:padding="25dp" />
 
                 <EditText
+                    android:text="123"
                     android:inputType="number"
                     android:id="@+id/cc_cvv"
                     android:textSize="9pt"
