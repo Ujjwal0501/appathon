@@ -12,15 +12,93 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:paddingTop="100dp">
+
         <TextView
+            android:textSize="9pt"
             android:text="Enter Your Credit card details."
             android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:padding="25dp"/>
-        <EditText
+            android:layout_height="wrap_content"/>
 
+        <EditText
+            android:inputType="number"
+            android:id="@+id/cc_no"
+            android:textAlignment="center"
+            android:hint="Credit Card Number"
             android:layout_width="300dp"
-            android:layout_height="wrap_content" />
+            android:layout_height="wrap_content"
+            android:padding="25dp" />
+
+        <LinearLayout
+            android:layout_marginTop="30dp"
+            android:orientation="horizontal"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <LinearLayout
+                android:gravity="center_horizontal"
+                android:layout_weight="1"
+                android:orientation="vertical"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent">
+
+                <TextView
+                    android:textSize="9pt"
+                    android:text="Expiry"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:padding="25dp" />
+
+                <EditText
+                    android:inputType="date"
+                    android:id="@+id/cc_exp"
+                    android:textSize="9pt"
+                    android:textAlignment="center"
+                    android:hint="MM/YY"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content" />
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:gravity="center_horizontal"
+                android:layout_weight="1"
+                android:orientation="vertical"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent">
+
+                <TextView
+                    android:textSize="9pt"
+                    android:text="CVV"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:padding="25dp" />
+
+                <EditText
+                    android:inputType="number"
+                    android:id="@+id/cc_cvv"
+                    android:textSize="9pt"
+                    android:hint="CVV"
+                    android:textAlignment="center"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content" />
+
+            </LinearLayout>
+
+        </LinearLayout>
+
+        <Button
+            android:id="@+id/cc_sbmt"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="40dp"
+            android:background="@color/colorAccent"
+            android:paddingLeft="20dp"
+            android:paddingTop="10dp"
+            android:paddingRight="20dp"
+            android:paddingBottom="10dp"
+            android:text="@string/submit"
+            android:textSize="9pt" />
+
     </LinearLayout>
 
 </android.support.constraint.ConstraintLayout>

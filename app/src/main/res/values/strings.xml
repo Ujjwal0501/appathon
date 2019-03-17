@@ -14,4 +14,7 @@
         completions."
     </string>
     <string name="title_activity_main">MainActivity</string>
+    <string name="submit">Submit</string>
+    <string name="create_ac">Create Account</string>
+    <string name="name_hint">Full Name</string>
 </resources>
