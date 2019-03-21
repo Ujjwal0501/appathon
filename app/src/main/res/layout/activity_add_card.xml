@@ -1,126 +1,102 @@
 <?xml version="1.0" encoding="utf-8"?>
-<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".AddCard">
+    android:paddingBottom="@dimen/activity_vertical_margin"
+    android:paddingLeft="@dimen/activity_horizontal_margin"
+    android:paddingRight="@dimen/activity_horizontal_margin"
+    android:paddingTop="@dimen/activity_vertical_margin"
+    tools:context="com.example.appathon.AddCard">
 
     <LinearLayout
-        android:gravity="center_horizontal"
-        android:orientation="vertical"
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:paddingTop="100dp">
-
-        <TextView
-            android:textSize="9pt"
-            android:text="Enter Your Credit card details."
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"/>
+        android:layout_height="wrap_content"
+        android:layout_centerInParent="true"
+        android:gravity="center"
+        android:orientation="vertical">
 
         <EditText
-            android:text="1234567890123456"
-            android:inputType="number"
-            android:id="@+id/cc_no"
-            android:textAlignment="center"
-            android:hint="Credit Card Number"
-            android:layout_width="300dp"
-            android:layout_height="wrap_content"
-            android:padding="25dp" />
-
-        <TextView
-            android:visibility="gone"
-            android:layout_marginTop="40dp"
-            android:textSize="9pt"
-            android:text="Your name as on Card"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"/>
-
-        <EditText
-            android:text="STATE BANK CUSTOMER"
             android:id="@+id/cc_holder"
-            android:textAlignment="center"
-            android:hint="Customer Name"
-            android:layout_width="300dp"
-            android:layout_height="wrap_content"
-            android:padding="25dp" />
+            android:layout_width="match_parent"
+            android:layout_height="48dp"
+            android:layout_marginBottom="-0.25dp"
+            android:background="@drawable/bg_card_number_edit_text"
+            android:drawableRight="@drawable/ic_card_holder"
+            android:hint="Card holder name"
+            android:padding="16dp"
+            android:textColor="@android:color/black"
+            android:textColorHint="@color/colorGray"
+            android:textSize="14sp"
+            tools:ignore="LabelFor,NegativeMargin" />
+
+        <EditText
+            android:id="@+id/cc_no"
+            android:layout_width="match_parent"
+            android:layout_height="48dp"
+            android:layout_marginBottom="-0.25dp"
+            android:background="@drawable/bg_card_number_edit_text"
+            android:drawableRight="@drawable/ic_card_number"
+            android:hint="Card number"
+            android:inputType="phone"
+            android:padding="16dp"
+            android:textColor="@android:color/black"
+            android:textColorHint="@color/colorGray"
+            android:textSize="14sp"
+            tools:ignore="LabelFor,NegativeMargin" />
 
         <LinearLayout
-            android:layout_marginTop="30dp"
-            android:orientation="horizontal"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content">
+            android:layout_height="wrap_content"
+            android:layout_marginTop="-0.25dp"
+            android:orientation="horizontal"
+            tools:ignore="NegativeMargin">
 
-            <LinearLayout
-                android:gravity="center_horizontal"
+            <EditText
+                android:id="@+id/cc_exp"
+                android:layout_width="0dp"
+                android:layout_height="48dp"
+                android:layout_marginRight="-0.25dp"
                 android:layout_weight="1"
-                android:orientation="vertical"
-                android:layout_width="wrap_content"
-                android:layout_height="match_parent">
+                android:background="@drawable/bg_card_date_edit_text"
+                android:drawableRight="@drawable/ic_card_date"
+                android:hint="MM/YY"
+                android:inputType="date"
+                android:padding="16dp"
+                android:textColor="@android:color/black"
+                android:textColorHint="@color/colorGray"
+                android:textSize="14sp"
+                tools:ignore="LabelFor,RtlHardcoded" />
 
-                <TextView
-                    android:visibility="gone"
-                    android:textSize="9pt"
-                    android:text="Expiry"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:padding="25dp" />
-
-                <EditText
-                    android:text="01/21"
-                    android:inputType="date"
-                    android:id="@+id/cc_exp"
-                    android:textSize="9pt"
-                    android:textAlignment="center"
-                    android:hint="MM/YY"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content" />
-
-            </LinearLayout>
-
-            <LinearLayout
-                android:gravity="center_horizontal"
+            <EditText
+                android:id="@+id/cc_cvv"
+                android:layout_width="0dp"
+                android:layout_height="48dp"
+                android:layout_marginLeft="-0.25dp"
                 android:layout_weight="1"
-                android:orientation="vertical"
-                android:layout_width="wrap_content"
-                android:layout_height="match_parent">
-
-                <TextView
-                    android:visibility="gone"
-                    android:textSize="9pt"
-                    android:text="CVV"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:padding="25dp" />
-
-                <EditText
-                    android:text="123"
-                    android:inputType="number"
-                    android:id="@+id/cc_cvv"
-                    android:textSize="9pt"
-                    android:hint="CVV"
-                    android:textAlignment="center"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content" />
-
-            </LinearLayout>
-
+                android:background="@drawable/bg_card_cvc_edit_text"
+                android:drawableRight="@drawable/ic_card_cvc"
+                android:hint="CVC"
+                android:inputType="number"
+                android:padding="16dp"
+                android:textColor="@android:color/black"
+                android:textColorHint="@color/colorGray"
+                android:textSize="14sp"
+                tools:ignore="LabelFor,RtlHardcoded" />
         </LinearLayout>
 
         <Button
+            android:layout_marginTop="16dp"
             android:id="@+id/cc_sbmt"
+            android:text="add card"
+            android:textColor="@android:color/black"
+            android:background="@color/design_default_color_primary_dark"
             android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="40dp"
-            android:background="@color/colorAccent"
-            android:paddingLeft="20dp"
-            android:paddingTop="10dp"
-            android:paddingRight="20dp"
-            android:paddingBottom="10dp"
-            android:text="@string/submit"
-            android:textSize="9pt" />
-
+            android:layout_height="wrap_content" />
+        <Button
+            android:id="@+id/af"
+            android:text="autofill"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" />
     </LinearLayout>
-
-</android.support.constraint.ConstraintLayout>
+</RelativeLayout>
