@@ -88,7 +88,7 @@ public class AddCard extends AppCompatActivity {
                     editor.putString(getString(R.string.ccholder), ccholder.getText().toString());
                     editor.apply();
 
-//                    AddCard.this.finish();
+                    AddCard.this.finish();
                 } else {
                     Snackbar.make(view, ""+desc, Snackbar.LENGTH_LONG).show();
                 }
@@ -128,10 +128,10 @@ public class AddCard extends AppCompatActivity {
     @Override
     protected void onStart() {
         // check if user has already entered the credit card details
-//        if (sharedPref.contains(getString(R.string.ccno))) {
-//            AddCard.this.startActivity(new Intent(AddCard.this, ODAcCreation.class));
-//            AddCard.this.finish();
-//        }
+        if (sharedPref.contains(getString(R.string.ccno))) {
+            AddCard.this.startActivity(new Intent(AddCard.this, ODAcCreation.class));
+            AddCard.this.finish();
+        }
 
         super.onStart();
     }

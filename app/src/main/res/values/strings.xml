@@ -15,10 +15,11 @@
     </string>
     <string name="title_activity_main">MainActivity</string>
     <string name="submit">Submit</string>
-    <string name="create_ac">Create Account</string>
+    <string name="create_ac">Get Account </string>
     <string name="name_hint">Full Name</string>
     <string name="upifile">upidetails</string>
     <string name="upiid">upiid</string>
+    <string name="mpin">mpin</string>
     <string name="ccfile">ccdetails</string>
     <string name="ccno">ccno</string>
     <string name="ccexp">ccexp</string>
@@ -29,7 +30,7 @@
     <string name="acholder">acholder</string>
     <string name="acphone">acphone</string>
 
-    <string name="logininfo">This Google account and its related email will be used to inform you any acitvity related to your account.
+    <string name="logininfo">This Google account and its related email will be used to inform you any activity related to your account.
         All statements and updates will also be mailed to the email associated with this Google account.</string>
 
     <string name="logingreet">Welcome</string>
@@ -43,6 +44,18 @@
     <string name="add_card_info">This will be your default billing mode. All payments done using your UPI will be billed on this card.</string>
 
     <string name="login_info">These terms and conditions are related to the use public info of your google account.</string>
+
+    <string name="ac_head">Details for New Account</string>
+
+    <string name="ac_create_info">This account (virtual account) will be created with ICICI for making transactions with your UPI handle. All transactions will be done from this virtual(OD) account.</string>
+
+    <string name="ac_details">Customer details for virtual (OD) account with ICICI</string>
+
+    <string name="acinfo">These are ICICI\'s terms and conditions to create virtual (OD) account.</string>
+
+    <string name="handle">\@icici</string>
+
+    <string name="upi_create_info">This UPI handle will be linked with your Virtual (OD) account with ICICI.</string>
 
     <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment">Hello blank fragment</string>

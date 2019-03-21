@@ -7,68 +7,156 @@
     tools:context=".UPICreation">
 
     <LinearLayout
-        android:padding="32dp"
-        android:orientation="vertical"
         android:layout_width="match_parent"
-        android:layout_height="match_parent">
-
-        <TextView
-            android:layout_marginTop="48dp"
-            android:textSize="9pt"
-            android:text="Account Number : "
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content" />
-
-        <EditText
-            android:padding="20dp"
-            android:textAlignment="center"
-            android:hint="OD Account Number"
-            android:enabled="false"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content" />
-
-        <TextView
-            android:text="Your UPI handle"
-            android:textSize="9pt"
-            android:layout_marginTop="40dp"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content" />
+        android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
+        android:layout_marginBottom="8dp"
+        android:orientation="vertical"
+        android:padding="32dp"
+        app:layout_constraintBottom_toTopOf="@+id/info"
+        app:layout_constraintTop_toTopOf="parent">
 
         <LinearLayout
-            android:orientation="horizontal"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="@dimen/activity_horizontal_margin"
+            android:orientation="horizontal">
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:drawablePadding="6dp"
+                android:text="@string/ac_head"
+                android:textAppearance="@style/TextAppearance.AppCompat.SearchResult.Title" />
+
+            <Button
+                android:layout_width="28dp"
+                android:layout_height="28dp"
+                android:layout_marginStart="-28dp"
+                android:background="@drawable/ic_action_info"
+                android:onClick="upiInfo" />
+
+        </LinearLayout>
+
+        <EditText
+            android:layout_width="match_parent"
+            android:layout_height="48dp"
+            android:layout_marginBottom="-0.25dp"
+            android:background="@drawable/bg_card_number_edit_text"
+            android:drawableEnd="@drawable/ic_account_number"
+            android:drawablePadding="6dp"
+            android:enabled="false"
+            android:text="1234567890123456"
+            android:hint="Account Number"
+            android:maxLines="1"
+            android:padding="16dp"
+            android:singleLine="true"
+            android:textColor="@android:color/black"
+            android:textColorHint="@color/colorGray"
+            android:textSize="14sp" />
+
+        <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content">
 
             <EditText
                 android:id="@+id/upi_id"
-                android:layout_weight="2"
-                android:padding="20dp"
-                android:textAlignment="center"
-                android:hint="UPI handle"
-                android:enabled="false"
                 android:layout_width="0dp"
-                android:layout_height="wrap_content" />
+                android:layout_height="48dp"
+                android:layout_marginBottom="-0.25dp"
+                android:layout_weight="3"
+                android:background="@drawable/bg_card_number_edit_text"
+                android:drawablePadding="6dp"
+                android:hint="Your UPI handle"
+                android:maxLines="1"
+                android:padding="16dp"
+                android:singleLine="true"
+                android:textColor="@android:color/black"
+                android:textColorHint="@color/colorGray"
+                android:textSize="14sp" />
 
             <TextView
-                android:layout_weight="1"
-                android:text="\@icici"
-                android:textSize="9pt"
+                android:paddingTop="8dp"
                 android:layout_width="0dp"
-                android:layout_height="wrap_content" />
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:background="@drawable/bg_card_number_edit_text"
+                android:minWidth="64dp"
+                android:text="@string/handle"
+                android:textSize="20sp" />
 
         </LinearLayout>
+
+        <EditText
+            android:id="@+id/mpin"
+            android:maxLength="6"
+            android:inputType="numberPassword"
+            android:tooltipText="This is your pin for making transactions with your UPI handle"
+            android:layout_width="match_parent"
+            android:layout_height="48dp"
+            android:layout_marginBottom="-0.25dp"
+            android:background="@drawable/bg_card_number_edit_text"
+            android:drawableEnd="@drawable/ic_mpin"
+            android:drawablePadding="6dp"
+            android:hint="MPIN"
+            android:maxLines="1"
+            android:padding="16dp"
+            android:singleLine="true"
+            android:textColor="@android:color/black"
+            android:textColorHint="@color/colorGray"
+            android:textSize="14sp" />
+
+        <EditText
+            android:id="@+id/cnf_mpin"
+            android:maxLength="6"
+            android:inputType="numberPassword"
+            android:tooltipText="This is your pin for making transactions with your UPI handle"
+            android:layout_width="match_parent"
+            android:layout_height="48dp"
+            android:layout_marginBottom="-0.25dp"
+            android:background="@drawable/bg_card_number_edit_text"
+            android:drawableEnd="@drawable/ic_mpin"
+            android:drawablePadding="6dp"
+            android:hint="Confirm MPIN"
+            android:maxLines="1"
+            android:padding="16dp"
+            android:singleLine="true"
+            android:textColor="@android:color/black"
+            android:textColorHint="@color/colorGray"
+            android:textSize="14sp" />
 
         <Button
             android:id="@+id/upi_create"
             android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
+            android:layout_height="48dp"
+            android:background="@drawable/bg_card_cvc_edit_text"
+            android:drawableEnd="@drawable/ic_action_create"
             android:layout_gravity="center"
             android:layout_marginTop="32dp"
-            android:paddingLeft="16dp"
-            android:paddingRight="24dp"
-            android:text="Create UPI"
-            android:textSize="18sp" />
+            android:drawablePadding="6dp"
+            android:paddingLeft="@dimen/activity_horizontal_margin"
+            android:paddingRight="@dimen/activity_horizontal_margin"
+            android:text="Create UPI" />
+
 
     </LinearLayout>
+
+    <TextView
+        android:visibility="gone"
+        android:id="@+id/info"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="@dimen/activity_horizontal_margin"
+        android:paddingLeft="@dimen/activity_horizontal_margin"
+        android:paddingRight="@dimen/activity_horizontal_margin"
+        android:paddingBottom="@dimen/activity_vertical_margin"
+        android:text="@string/upi_create_info"
+        android:textAlignment="center"
+        android:textAppearance="@style/TextAppearance.AppCompat.Tooltip"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.974" />
 
 </android.support.constraint.ConstraintLayout>

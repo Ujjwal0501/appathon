@@ -13,18 +13,42 @@
         android:layout_marginBottom="8dp"
         android:gravity="center_horizontal"
         android:orientation="vertical"
-        app:layout_constraintBottom_toBottomOf="parent"
+        android:padding="@dimen/activity_vertical_margin"
+        app:layout_constraintBottom_toTopOf="@+id/info"
         app:layout_constraintTop_toTopOf="parent">
 
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="@dimen/activity_horizontal_margin"
+            android:orientation="horizontal">
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:drawablePadding="6dp"
+                android:text="@string/ac_head"
+                android:textAppearance="@style/TextAppearance.AppCompat.SearchResult.Title" />
+
+            <Button
+                android:layout_width="28dp"
+                android:layout_height="28dp"
+                android:layout_marginStart="-28dp"
+                android:background="@drawable/ic_action_info"
+                android:onClick="acInfo" />
+
+        </LinearLayout>
+
         <EditText
-            android:id="@+id/cc_holder"
+            android:id="@+id/ac_holder"
             android:layout_width="match_parent"
             android:layout_height="48dp"
             android:layout_marginBottom="-0.25dp"
             android:background="@drawable/bg_card_number_edit_text"
             android:capitalize="words"
-            android:drawableRight="@drawable/ic_card_holder"
-            android:hint="@string/cname"
+            android:drawableEnd="@drawable/ic_card_holder"
+            android:drawablePadding="6dp"
+            android:hint="Account Holder Name"
             android:maxLines="1"
             android:padding="16dp"
             android:singleLine="true"
@@ -35,26 +59,93 @@
 
         <EditText
             android:id="@+id/ac_phone"
+            android:maxLength="10"
+            android:layout_width="match_parent"
+            android:textColorHint="@color/colorGray"
+            android:layout_height="48dp"
+            android:layout_marginBottom="-0.25dp"
+            android:background="@drawable/bg_card_number_edit_text"
+            android:drawableEnd="@drawable/ic_action_ph"
+            android:hint="Mobile Number"
+            android:inputType="phone"
+            android:padding="16dp"
+            android:textSize="14sp" />
+
+        <EditText
+            android:id="@+id/ac_addr"
             android:layout_width="match_parent"
             android:layout_height="48dp"
             android:layout_marginBottom="-0.25dp"
             android:background="@drawable/bg_card_number_edit_text"
-            android:drawableRight="@drawable/ic_card_holder"
-            android:hint="Mobile Number"
-            android:inputType="phone"
+            android:drawableEnd="@drawable/ic_action_city"
+            android:hint="City, State, Country"
+            android:textColorHint="@color/colorGray"
+            android:inputType="text"
             android:padding="16dp"
-            android:text="9123456789"
-            android:textAlignment="center"
             android:textSize="14sp" />
 
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="8dp"
+            android:layout_marginTop="8dp"
+            android:layout_marginEnd="8dp"
+            android:layout_marginBottom="8dp"
+            android:orientation="horizontal"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintVertical_bias="0.954">
+
+            <CheckBox
+                android:id="@+id/tc"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:padding="8dp"
+                android:text="@string/tandc" />
+
+            <Button
+                android:layout_width="28dp"
+                android:layout_height="28dp"
+                android:background="@drawable/ic_action_info"
+                android:onClick="tcInfo" />
+
+        </LinearLayout>
 
         <Button
             android:id="@+id/create_ac"
-            android:layout_marginTop="@dimen/activity_vertical_margin"
             android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
+            android:layout_height="48dp"
+            android:layout_marginTop="@dimen/activity_vertical_margin"
+            android:background="@drawable/bg_card_cvc_edit_text"
+            android:drawableEnd="@drawable/ic_action_create"
+            android:drawablePadding="6dp"
+            android:paddingLeft="@dimen/activity_horizontal_margin"
+            android:paddingRight="@dimen/activity_horizontal_margin"
             android:text="@string/create_ac" />
 
     </LinearLayout>
+
+    <TextView
+        android:id="@+id/info"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="@dimen/activity_horizontal_margin"
+        android:paddingLeft="@dimen/activity_horizontal_margin"
+        android:paddingRight="@dimen/activity_horizontal_margin"
+        android:paddingBottom="@dimen/activity_vertical_margin"
+        android:text="@string/ac_create_info"
+        android:textAlignment="center"
+        android:textAppearance="@style/TextAppearance.AppCompat.Tooltip"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.974" />
 
 </android.support.constraint.ConstraintLayout>
