@@ -3,10 +3,12 @@ package com.example.appathon;
 import android.content.Context;
 import android.content.Intent;
 import android.content.SharedPreferences;
+import android.support.design.widget.Snackbar;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.text.Editable;
 import android.util.Log;
+import android.view.KeyEvent;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
@@ -85,18 +87,35 @@ public class AddCard extends AppCompatActivity {
 
                     AddCard.this.finish();
                 } else {
-                    Toast.makeText(AddCard.this, "" + desc, Toast.LENGTH_SHORT).show();
+                    Snackbar.make(view, ""+desc, Snackbar.LENGTH_LONG).show();
                 }
             }
         });
 
-        findViewById(R.id.af).setOnClickListener(new View.OnClickListener() {
+        ccno.setOnKeyListener(new View.OnKeyListener() {
             @Override
-            public void onClick(View view) {
-                ccno.setText("1234567890123456");
-                ccholder.setText("Full Name");
-                ccexp.setText("0120");
-                cccvv.setText("123");
+            public boolean onKey(View view, int i, KeyEvent keyEvent) {
+                if (ccno.getText().toString().length() == 19)
+                    ccexp.requestFocus();
+                return false;
+            }
+        });
+
+        ccexp.setOnKeyListener(new View.OnKeyListener() {
+            @Override
+            public boolean onKey(View view, int i, KeyEvent keyEvent) {
+                if (ccexp.getText().toString().length() == 5)
+                    cccvv.requestFocus();
+                return false;
+            }
+        });
+
+        cccvv.setOnKeyListener(new View.OnKeyListener() {
+            @Override
+            public boolean onKey(View view, int i, KeyEvent keyEvent) {
+                if (cccvv.getText().toString().length() == 3)
+                    cccvv.clearFocus();
+                return false;
             }
         });
 
@@ -196,7 +215,7 @@ public class AddCard extends AppCompatActivity {
             } else if (cccvv.getText().toString().length() < 3) {
                 desc = "Invalid secret";
                 flag = 0;
-            } else if (y < 19 || (y == 19 && m < 3)) {
+            } else if ((y < 19 && m < 13) || (y == 19 && m < 3)) {
                 desc = "Credit card is expired";
                 flag = 0;
             }

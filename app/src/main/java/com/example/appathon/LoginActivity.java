@@ -1,10 +1,12 @@
 package com.example.appathon;
 
 import android.content.Intent;
+import android.support.design.widget.Snackbar;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
+import android.widget.CheckBox;
 import android.widget.Toast;
 
 import com.google.android.gms.auth.api.signin.GoogleSignIn;
@@ -20,11 +22,14 @@ public class LoginActivity extends AppCompatActivity {
     int RC_SIGN_IN = 1;
     String TAG = "ICICI-LOGIN";
     GoogleSignInClient mGoogleSignInClient;
+    CheckBox tc;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_login);
+
+        tc = (CheckBox) findViewById(R.id.tc);
 
 
         // Configure sign-in to request the user's ID, email address, and basic
@@ -62,7 +67,10 @@ public class LoginActivity extends AppCompatActivity {
     public void onClick1(View v) {
         switch (v.getId()) {
             case R.id.sign_in_button:
-                signIn();
+                if (tc.isChecked())
+                    signIn();
+                else
+                    Snackbar.make(tc, "Please agree to Terms and Conditions.", Snackbar.LENGTH_LONG).show();
                 break;
             // ...
         }

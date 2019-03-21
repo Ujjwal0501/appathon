@@ -29,6 +29,19 @@
     <string name="acholder">acholder</string>
     <string name="acphone">acphone</string>
 
+    <string name="logininfo">This Google account and its related email will be used to inform you any acitvity related to your account.
+        All statements and updates will also be mailed to the email associated with this Google account.</string>
+
+    <string name="logingreet">Welcome</string>
+
+    <string name="tandc">I agree to the <a href="https://www.google.com">terms and conditions.</a></string>
+
+    <string name="cname">Name on Card</string>
+
+    <string name="add_card_head">Credit Card Details</string>
+
+    <string name="add_card_info">This will be your default billing mode. All payments done using your UPI will be billed on this card.</string>
+
     <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment">Hello blank fragment</string>
 </resources>
