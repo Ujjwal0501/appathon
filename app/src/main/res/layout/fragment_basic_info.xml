@@ -3,12 +3,185 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="#10a456a6"
     tools:context=".BasicInfo">
 
     <!-- TODO: Update blank fragment layout -->
-    <TextView
+    <ScrollView
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:text="@string/hello_blank_fragment" />
+        android:layout_height="match_parent">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical"
+            android:padding="0dp">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@drawable/bg_card_date_edit_text"
+                android:orientation="horizontal"
+                android:padding="@dimen/activity_horizontal_margin">
+
+                <ImageView
+                    android:layout_width="72dp"
+                    android:layout_height="72dp"
+                    android:src="@drawable/ic_user" />
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_vertical"
+                    android:gravity="center_vertical"
+                    android:orientation="vertical"
+                    android:padding="@dimen/activity_vertical_margin">
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="Aman Pandey"
+                        android:textSize="12sp" />
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="amanpandey@gmail.com"
+                        android:textSize="12sp" />
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="9123456789"
+                        android:textSize="12sp" />
+
+                </LinearLayout>
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="-16dp"
+                android:layout_marginTop="4dp"
+                android:layout_marginEnd="-16dp"
+                android:orientation="vertical"
+                android:padding="0dp">
+
+                <Button
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="0dp"
+                    android:background="@drawable/bg_card_date_edit_text"
+                    android:capitalize="words"
+                    android:drawableEnd="@drawable/ic_action_name"
+                    android:drawablePadding="@dimen/activity_horizontal_margin"
+                    android:drawableStart="@drawable/ic_card_number"
+                    android:padding="32dp"
+                    android:text="Saved Cards"
+                    android:textAlignment="textStart"
+                    android:textAppearance="@style/TextAppearance.AppCompat"
+                    android:textSize="13sp" />
+
+                <Button
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="0dp"
+                    android:background="@drawable/bg_card_date_edit_text"
+                    android:capitalize="words"
+                    android:drawableEnd="@drawable/ic_action_name"
+                    android:drawablePadding="@dimen/activity_horizontal_margin"
+                    android:drawableStart="@drawable/ic_account_number"
+                    android:padding="32dp"
+                    android:text="OD Account"
+                    android:textAlignment="textStart"
+                    android:textAppearance="@style/TextAppearance.AppCompat"
+                    android:textSize="13sp" />
+
+                <Button
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="0dp"
+                    android:background="@drawable/bg_card_date_edit_text"
+                    android:capitalize="words"
+                    android:drawableEnd="@drawable/ic_action_name"
+                    android:drawablePadding="@dimen/activity_horizontal_margin"
+                    android:drawableStart="@drawable/ic_upi"
+                    android:padding="32dp"
+                    android:text="UPI Handle"
+                    android:textAlignment="textStart"
+                    android:textAppearance="@style/TextAppearance.AppCompat"
+                    android:textSize="13sp" />
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="-16dp"
+                android:layout_marginTop="4dp"
+                android:layout_marginEnd="-16dp"
+                android:orientation="vertical"
+                android:padding="0dp">
+
+                <Button
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="0dp"
+                    android:background="@drawable/bg_card_date_edit_text"
+                    android:drawableStart="@drawable/ic_transaction"
+                    android:drawableEnd="@drawable/ic_action_name"
+                    android:drawablePadding="@dimen/activity_horizontal_margin"
+                    android:onClick="viewTransaction"
+                    android:padding="32dp"
+                    android:text="My Transactions"
+                    android:textAlignment="textStart"
+                    android:textAppearance="@style/TextAppearance.AppCompat"
+                    android:textSize="13sp" />
+
+                <Button
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="0dp"
+                    android:background="@drawable/bg_card_date_edit_text"
+                    android:drawableEnd="@drawable/ic_action_name"
+                    android:drawablePadding="@dimen/activity_horizontal_margin"
+                    android:drawableStart="@drawable/ic_card_holder"
+                    android:padding="32dp"
+                    android:text="Account Info"
+                    android:textAlignment="textStart"
+                    android:textAppearance="@style/TextAppearance.AppCompat"
+                    android:textSize="13sp" />
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="-16dp"
+                android:layout_marginTop="4dp"
+                android:layout_marginEnd="-16dp"
+                android:orientation="vertical"
+                android:padding="0dp">
+
+                <Button
+                    android:onClick="logOut"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="0dp"
+                    android:background="@drawable/bg_card_date_edit_text"
+                    android:padding="32dp"
+                    android:text="Logout"
+                    android:textColor="#ff0000"
+                    android:textAlignment="center"
+                    android:textAppearance="@style/TextAppearance.AppCompat"
+                    android:textSize="13sp" />
+
+            </LinearLayout>
+
+
+        </LinearLayout>
+
+    </ScrollView>
 
 </FrameLayout>

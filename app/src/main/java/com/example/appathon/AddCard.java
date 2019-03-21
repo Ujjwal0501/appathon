@@ -14,7 +14,6 @@ import android.view.View;
 import android.view.inputmethod.InputMethodManager;
 import android.widget.Button;
 import android.widget.EditText;
-import android.widget.Toast;
 
 import butterknife.ButterKnife;
 import butterknife.OnTextChanged;
@@ -59,8 +58,6 @@ public class AddCard extends AppCompatActivity {
         cccvv = (EditText) findViewById(R.id.cc_cvv);
         btn = (Button) findViewById(R.id.cc_sbmt);
         ccholder = (EditText) findViewById(R.id.cc_holder);
-
-        Toast.makeText(this, ""+message, Toast.LENGTH_SHORT).show();
 
         // TODO: verify the credit card details for validity
 

@@ -5,6 +5,7 @@ import android.support.v4.view.PagerAdapter;
 import android.support.v4.view.ViewPager;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.view.View;
 
 public class Home extends AppCompatActivity {
 
@@ -49,5 +50,11 @@ public class Home extends AppCompatActivity {
 
             }
         });
+    }
+
+    public void viewTransaction(View view) {
+
+        final ViewPager viewPager = (ViewPager) findViewById(R.id.viewpager);
+        viewPager.setCurrentItem(1, true);
     }
 }

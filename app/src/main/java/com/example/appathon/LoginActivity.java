@@ -7,7 +7,6 @@ import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
 import android.widget.CheckBox;
-import android.widget.Toast;
 
 import com.google.android.gms.auth.api.signin.GoogleSignIn;
 import com.google.android.gms.auth.api.signin.GoogleSignInAccount;
@@ -54,13 +53,12 @@ public class LoginActivity extends AppCompatActivity {
         // the GoogleSignInAccount will be non-null.
         GoogleSignInAccount account = GoogleSignIn.getLastSignedInAccount(this);
         if (account != null) {
-            Toast.makeText(this, "You are already signed in.", Toast.LENGTH_SHORT).show();
+            Snackbar.make(tc, "You are already signed in.", Snackbar.LENGTH_SHORT).show();
             Intent next = new Intent(LoginActivity.this, AddCard.class);
-            next.putExtra("account", account.getEmail()+"");
             LoginActivity.this.startActivity(next);
             this.finish();
         } else
-            Toast.makeText(this, "You are not signed in.", Toast.LENGTH_SHORT).show();
+            Snackbar.make(tc, "You are not signed in.", Snackbar.LENGTH_SHORT).show();
         super.onStart();
     }
 
@@ -100,20 +98,20 @@ public class LoginActivity extends AppCompatActivity {
 
             // Signed in successfully, show authenticated UI.
             if (account != null) {
-                Toast.makeText(this, "Sign-Up successful.", Toast.LENGTH_SHORT).show();
+                Snackbar.make(tc, "Sign-Up successful.", Snackbar.LENGTH_SHORT).show();
                 Intent next = new Intent(LoginActivity.this, AddCard.class);
                 next.putExtra("account", account.getEmail()+"");
                 LoginActivity.this.startActivity(next);
                 this.finish();
             } else {
-                Toast.makeText(this, "Error during Sign-Up!", Toast.LENGTH_SHORT).show();
+                Snackbar.make(tc, "Error during Sign-Up!", Snackbar.LENGTH_SHORT).show();
             }
             // updateUI(account);
         } catch (ApiException e) {
             // The ApiException status code indicates the detailed failure reason.
             // Please refer to the GoogleSignInStatusCodes class reference for more information.
             Log.w(TAG, "signInResult:failed code=" + e.getStatusCode());
-            Toast.makeText(this, "Error during Sign-Up!\n"+e, Toast.LENGTH_SHORT).show();
+            Snackbar.make(tc, "Error during Sign-Up!\n"+e, Snackbar.LENGTH_SHORT).show();
         }
     }
 

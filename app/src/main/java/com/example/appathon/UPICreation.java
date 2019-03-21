@@ -99,12 +99,6 @@ public class UPICreation extends AppCompatActivity {
         super.onStart();
     }
 
-    protected void onCardCVCTextChanged(Editable s) {
-        if (s.length() > MPIN_TOTAL_SYMBOLS) {
-            s.delete(MPIN_TOTAL_SYMBOLS, s.length());
-        }
-    }
-
     public void upiInfo(View view) {
         Snackbar.make(view, "These details are for the creation of Your UPI handle.", Snackbar.LENGTH_LONG).show();
     }
