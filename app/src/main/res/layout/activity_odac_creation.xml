@@ -7,61 +7,53 @@
     tools:context=".ODAcCreation">
 
     <LinearLayout
-        android:orientation="vertical"
-        android:paddingTop="100dp"
-        android:gravity="center_horizontal"
         android:layout_width="match_parent"
-        android:layout_height="match_parent">
+        android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
+        android:layout_marginBottom="8dp"
+        android:gravity="center_horizontal"
+        android:orientation="vertical"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
 
-        <LinearLayout
-            android:paddingLeft="35dp"
-            android:paddingRight="35dp"
-            android:orientation="horizontal"
+        <EditText
+            android:id="@+id/cc_holder"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content">
+            android:layout_height="48dp"
+            android:layout_marginBottom="-0.25dp"
+            android:background="@drawable/bg_card_number_edit_text"
+            android:capitalize="words"
+            android:drawableRight="@drawable/ic_card_holder"
+            android:hint="@string/cname"
+            android:maxLines="1"
+            android:padding="16dp"
+            android:singleLine="true"
+            android:textColor="@android:color/black"
+            android:textColorHint="@color/colorGray"
+            android:textSize="14sp"
+            tools:ignore="LabelFor,NegativeMargin" />
 
-            <TextView
-                android:text="Name"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content" />
-
-            <EditText
-                android:id="@+id/ac_holder"
-                android:text="Name"
-                android:textAlignment="center"
-                android:hint="@string/name_hint"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content" />
-
-        </LinearLayout>
-
-        <LinearLayout
-            android:padding="35dp"
-            android:orientation="horizontal"
+        <EditText
+            android:id="@+id/ac_phone"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content">
+            android:layout_height="48dp"
+            android:layout_marginBottom="-0.25dp"
+            android:background="@drawable/bg_card_number_edit_text"
+            android:drawableRight="@drawable/ic_card_holder"
+            android:hint="Mobile Number"
+            android:inputType="phone"
+            android:padding="16dp"
+            android:text="9123456789"
+            android:textAlignment="center"
+            android:textSize="14sp" />
 
-            <TextView
-                android:text="Contact No."
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content" />
-
-            <EditText
-                android:id="@+id/ac_phone"
-                android:text="9123456789"
-                android:inputType="phone"
-                android:textAlignment="center"
-                android:hint="Mobile Number"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content" />
-
-        </LinearLayout>
 
         <Button
             android:id="@+id/create_ac"
-            android:text="@string/create_ac"
+            android:layout_marginTop="@dimen/activity_vertical_margin"
             android:layout_width="wrap_content"
-            android:layout_height="wrap_content" />
+            android:layout_height="wrap_content"
+            android:text="@string/create_ac" />
 
     </LinearLayout>
 

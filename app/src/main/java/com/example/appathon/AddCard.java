@@ -1,5 +1,6 @@
 package com.example.appathon;
 
+import android.app.Activity;
 import android.content.Context;
 import android.content.Intent;
 import android.content.SharedPreferences;
@@ -10,6 +11,7 @@ import android.text.Editable;
 import android.util.Log;
 import android.view.KeyEvent;
 import android.view.View;
+import android.view.inputmethod.InputMethodManager;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.Toast;
@@ -67,6 +69,7 @@ public class AddCard extends AppCompatActivity {
         btn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
+                hideKeyboardFrom(AddCard.this, view);
                 desc = "";
                 int flag;
                 if (formfill() == 1)
@@ -85,7 +88,7 @@ public class AddCard extends AppCompatActivity {
                     editor.putString(getString(R.string.ccholder), ccholder.getText().toString());
                     editor.apply();
 
-                    AddCard.this.finish();
+//                    AddCard.this.finish();
                 } else {
                     Snackbar.make(view, ""+desc, Snackbar.LENGTH_LONG).show();
                 }
@@ -114,7 +117,7 @@ public class AddCard extends AppCompatActivity {
             @Override
             public boolean onKey(View view, int i, KeyEvent keyEvent) {
                 if (cccvv.getText().toString().length() == 3)
-                    cccvv.clearFocus();
+                    hideKeyboardFrom(AddCard.this, view);
                 return false;
             }
         });
@@ -125,10 +128,10 @@ public class AddCard extends AppCompatActivity {
     @Override
     protected void onStart() {
         // check if user has already entered the credit card details
-        if (sharedPref.contains(getString(R.string.ccno))) {
-            AddCard.this.startActivity(new Intent(AddCard.this, ODAcCreation.class));
-            AddCard.this.finish();
-        }
+//        if (sharedPref.contains(getString(R.string.ccno))) {
+//            AddCard.this.startActivity(new Intent(AddCard.this, ODAcCreation.class));
+//            AddCard.this.finish();
+//        }
 
         super.onStart();
     }
@@ -215,7 +218,7 @@ public class AddCard extends AppCompatActivity {
             } else if (cccvv.getText().toString().length() < 3) {
                 desc = "Invalid secret";
                 flag = 0;
-            } else if ((y < 19 && m < 13) || (y == 19 && m < 3)) {
+            } else if (y < 19 || m > 12 || (y == 19 && m < 3) ||  m < 1) {
                 desc = "Credit card is expired";
                 flag = 0;
             }
@@ -231,5 +234,10 @@ public class AddCard extends AppCompatActivity {
             desc = "Complete the details first";
             return 0;
         } else return 1;
+    }
+
+    public static void hideKeyboardFrom(Context context, View view) {
+        InputMethodManager imm = (InputMethodManager) context.getSystemService(Activity.INPUT_METHOD_SERVICE);
+        imm.hideSoftInputFromWindow(view.getWindowToken(), 0);
     }
 }

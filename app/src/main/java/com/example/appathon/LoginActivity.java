@@ -116,4 +116,8 @@ public class LoginActivity extends AppCompatActivity {
             Toast.makeText(this, "Error during Sign-Up!\n"+e, Toast.LENGTH_SHORT).show();
         }
     }
+
+    public void tcInfo(View view) {
+        Snackbar.make(view, ""+getString(R.string.login_info), Snackbar.LENGTH_LONG).show();
+    }
 }
