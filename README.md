@@ -1,2 +1,2 @@
 # appathon
-An android app for ICICI - Appathon
+An android demo app for UPI based idea
